@@ -1,0 +1,51 @@
+{% extends 'base_selection.html' %}
+
+{% block meta_description %}Test out different smite loadouts{% endblock %}
+{% block css %}{{ url_for('static', filename='css/char_build.css') }}{% endblock %}
+{% block js %}{{ url_for('static', filename='js/char_build.js') }}{% endblock %}
+
+{% block selection_body %}
+   <body>
+      <div class="container has-text-centered">
+         <div class="column is-2 is-offset-1">
+
+            {% for char in char_list %}
+            <div class="card">
+               <div class="card-image">
+                  <figure class="image is-4by3">
+                     <img src="{{ url_for('static', filename='images/chilles_default.jpg') }}" alt="Placeholder image">
+                  </figure>
+               </div>
+
+               <div class="card-content">
+                  <div class="content">
+                     <a href="/build/{{char}}">
+                        <p class="title is-4" style="color:blue;">{{char}}</p>
+                     </a>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+
+            <div class="card-content">
+               <div class="media">
+                  <div class="media-content">
+                     <p class="title is-4">John Smith</p>
+                     <p class="subtitle is-6">@johnsmith</p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="card-content">
+               <div class="media">
+                  <div class="media-content">
+                     <p class="title is-4">John Smith</p>
+                     <p class="subtitle is-6">@johnsmith</p>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </body>
+{% endblock %}
