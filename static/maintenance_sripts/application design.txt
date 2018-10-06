@@ -1,0 +1,18 @@
+God Name | God Type | health | Mana | Mvt Speed | Range |  HP5  |  MP5  |
+  name      mag/phys
+
+Phy Prot | Mag Prot | Cooldown | Item Atk Power | Atk Spd | Atk Progression |
+Mag Pen | Phys Pen | Crit | Phy lifesteal |
+
+# of atks in chain | atk #1 prog dmg | atk #2 dmg | atk #3 dmg | atk #4 dmg
+            atk #1 in chain = (base atk dmg * level + item atk pwr) atk #1 prog dmg
+
+special atk # | ability #1 changes | #2 | #3 | #4
+            checkboxes to turn on the effects for each ability
+            going to have to do a lot of work to make this work across teams
+
+add graphs at the bottom to show either autoattack or ability power curves
+
+also make a tab for team power curves
+work healing into the graphs somehow and database, healing is in the ability
+tree so IDK
