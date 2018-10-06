@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description"content="{% block meta_description %}{% endblock %}">
+<!--
+<meta name="csrf-token" content="">
+-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<link rel="stylesheet" type="text/plain" href="{% block css %}{% endblock %}">
+<script src="{% block js %}{% endblock %}"></script>
+
+
+{% if char %}
+  <head>
+    <title>{{char.upper()}}</title>
+  </head>
+
+  <body>
+    <section class="hero is-black is-fullheight">
+
+      <div class="hero-head">
+      </div>
+
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column">
+            <div class="column is-10 is-offset-1">
+
+            {% block char_body %} {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </section>
+  </body>
+
+{% else %}
+  <head>
+    <title>Character Selection</title>
+  </head>
+
+  <body>
+    <section class="hero is-black is-fullheight">
+
+      <div class="hero-head">
+      </div>
+
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column">
+            <div class="column is-10 is-offset-1">
+
+            {% block selection_body %} {% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </body>
+{% endif %}
