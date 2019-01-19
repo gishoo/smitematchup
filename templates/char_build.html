@@ -7,43 +7,32 @@
 {% block selection_body %}
    <body>
       <div class="container has-text-centered">
-         <div class="column is-2 is-offset-1">
+         <div class="columns">
 
-            {% for char in char_list %}
-            <div class="card">
-               <div class="card-image">
-                  <figure class="image is-4by3">
-                     <img src="{{ url_for('static', filename='images/chilles_default.jpg') }}" alt="Placeholder image">
-                  </figure>
-               </div>
+            <!-- Opens Card Display-->
+            {%for char_list in batch_list %}
+               <div class="column is-2 is-multiline">
+               {% for char in char_list %}
+                  <div class="card">
+                     <div class="card-image">
+                        <figure class="image is-4by3">
+                           <img src="{{ url_for('static', filename='images/chilles_default.jpg') }}" alt="Placeholder image">
+                        </figure>
+                     </div>
 
-               <div class="card-content">
-                  <div class="content">
-                     <a href="/build/{{char}}">
-                        <p class="title is-4" style="color:blue;">{{char}}</p>
-                     </a>
+                     <div class="card-content">
+                        <div class="content">
+                           <a href="/build/{{char}}">
+                              <p class="title is-6" style="color:blue;">{{char}}</p>
+                           </a>
+                        </div>
+                     </div>
                   </div>
+                  <div style="height:20px"></div>
+               {% endfor %}
                </div>
-            </div>
             {% endfor %}
-
-            <div class="card-content">
-               <div class="media">
-                  <div class="media-content">
-                     <p class="title is-4">John Smith</p>
-                     <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-               </div>
-            </div>
-
-            <div class="card-content">
-               <div class="media">
-                  <div class="media-content">
-                     <p class="title is-4">John Smith</p>
-                     <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-               </div>
-            </div>
+            <!-- Closes Card Display -->
 
          </div>
       </div>
