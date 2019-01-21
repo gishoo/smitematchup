@@ -13,13 +13,14 @@
             <div class="column ">
                {% for char in char_list %}
                   <div class="tile is-ancestor">
-                     <figure class="image ">
-                        {% set filename= 'images/' + char + '_default.jpg' %}
-                        <img src="{{ url_for('static', filename=filename) }}" alt="Placeholder image">
-                     </figure>
-                     <!-- <a href="/build/{{char}}">
-                        <p class="title is-6" style="color:blue;">{{char}}</p>
-                     </a> -->
+                     <a href="/build/{{char}}">
+                        <figure class="image ">
+                           {% set filename= 'images/' + char + '_default.jpg' %}
+                           <img src="{{ url_for('static', filename=filename) }}" alt="Placeholder image">
+                           <figcaption class="title is-6 has-text-centered">{{char}}
+                           </figcaption>
+                        </figure>
+                     </a>
                   </div>
                {% endfor %}
             </div>

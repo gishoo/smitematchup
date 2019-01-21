@@ -1,0 +1,40 @@
+{% extends 'base_selection.html' %}
+
+{% block meta_description %}Test out different smite loadouts{% endblock %}
+{% block css %}{{ url_for('static', filename='css/char_build.css') }}{% endblock %}
+{% block js %}{{ url_for('static', filename='js/char_build.js') }}{% endblock %}
+
+{% block selection_body %}
+   <body>
+      <div class="container has-text-centered">
+         <div class="columns">
+
+            <!-- Opens Card Display-->
+            {%for char_list in batch_list %}
+               <div class="column is-2 is-multiline">
+               {% for char in char_list %}
+                  <div class="card">
+                     <div class="card-image">
+                        <figure class="image is-4by3">
+                           <img src="{{ url_for('static', filename='images/Achilles_default.jpg') }}" alt="Placeholder image">
+                        </figure>
+                     </div>
+
+                     <div class="card-content">
+                        <div class="content">
+                           <a href="/build/{{char}}">
+                              <p class="title is-6" style="color:blue;">{{char}}</p>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div style="height:20px"></div>
+               {% endfor %}
+               </div>
+            {% endfor %}
+            <!-- Closes Card Display -->
+
+         </div>
+      </div>
+   </body>
+{% endblock %}
