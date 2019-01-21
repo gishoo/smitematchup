@@ -16,18 +16,14 @@ def create_app():
 
    @app.route('/')
    def index():
-      """
-      Render a hello world response.
-
-      :return"
-      """
+      """Returns the index page"""
       return 'MAKE an Index page'
 
 
    @app.route('/build/')
    @app.route('/build/<char>')
    def load_char(char=None):
-      """ """
+      """Accumulates the variables needed the character selection screen and passes them"""
       #remove this and pull char names from database
       char_list = ['Achilles','Bellona','Guan Yu','Mercury','Sol','Agni','Cabrakan','Hachiman','Neith','Sun Wukong','Ah Muzen Cab','Camazotz','Hades','Nemesis','Susano','Ah Puch','Cerberus','He Bo','Ne Zha','Sylvanus','Amaterasu','Cernunnos','Hel','Nike','Terra','Anhur','Chaac','Hercules','Nox','Thanatos','Anubis',"Chang'e",'Hou Yi','Nu Wa','The Morrigan','Ao Kuang','Chiron','Hun Batz','Thor','Aphrodite','Chronos','Isis','Osiris','Thoth','Apollo','Cu Chulainn','Izanami','Poseidon','Tyr','Arachne','Cupid','Janus','Ra','Ullr','Ares','Da Ji','Jing Wei','Raijin','Vamana','Artemis','Discordia','Kali','Rama','Vulcan','Artio','Erlang Shen','Khepri','Ratatoskr','Xbalanque','Athena','Fafnir','Kukulkan','Ravana','Xing Tian','Awilix','Fenrir','Kumbhakarna','Scylla','Ymir','Bacchus','Freya','Kuzenbo','Serqet','Zeus','Bakasura','Ganesha','Loki','Skadi','Zhong Kui','Bastet','Geb','Medusa','Sobek']
       char_list.sort()
@@ -45,10 +41,7 @@ def create_app():
             tmp = num + count * batches
             if tmp <= num_chars-1:
                tmp_list.append(char_list[tmp])
-            else:
-               print("\n\n\n",tmp,"\n\n\n")
          batch_list.append(tmp_list)
-      print("\n",batch_list,"\n")
 
       #fill dict with the variables needed for the templates
       var_dict = {"char":char, "batch_list":batch_list }
