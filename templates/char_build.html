@@ -5,36 +5,27 @@
 {% block js %}{{ url_for('static', filename='js/char_build.js') }}{% endblock %}
 
 {% block selection_body %}
-   <body>
-      <div class="container has-text-centered">
-         <div class="columns">
+   <div class="container">
+      <div class="columns">
 
-            <!-- Opens Card Display-->
-            {%for char_list in batch_list %}
-               <div class="column is-2 is-multiline">
+         <!-- Creates columns of characters-->
+         {%for char_list in batch_list %}
+            <div class="column ">
                {% for char in char_list %}
-                  <div class="card">
-                     <div class="card-image">
-                        <figure class="image is-4by3">
-                           <img src="{{ url_for('static', filename='images/chilles_default.jpg') }}" alt="Placeholder image">
-                        </figure>
-                     </div>
-
-                     <div class="card-content">
-                        <div class="content">
-                           <a href="/build/{{char}}">
-                              <p class="title is-6" style="color:blue;">{{char}}</p>
-                           </a>
-                        </div>
-                     </div>
+                  <div class="tile is-ancestor">
+                     <figure class="image ">
+                        {% set filename= 'images/' + char + '_default.jpg' %}
+                        <img src="{{ url_for('static', filename=filename) }}" alt="Placeholder image">
+                     </figure>
+                     <!-- <a href="/build/{{char}}">
+                        <p class="title is-6" style="color:blue;">{{char}}</p>
+                     </a> -->
                   </div>
-                  <div style="height:20px"></div>
                {% endfor %}
-               </div>
-            {% endfor %}
-            <!-- Closes Card Display -->
+            </div>
+         {% endfor %}
+         <!-- Closes columns -->
 
-         </div>
       </div>
-   </body>
+   </div>
 {% endblock %}
